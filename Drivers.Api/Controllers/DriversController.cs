@@ -37,7 +37,7 @@ public class DriversController : ControllerBase
         if (drive == null)
             return BadRequest();
             if(drive.Nombre == string.Empty)
-            ModelState.AddModelError("Name", "El driver no debe estar vacio");
+            ModelState.AddModelError("Nombre", "El driver no debe estar vacio");
 
             await _driverServices.InsertDriver(drive);
 
@@ -49,7 +49,7 @@ public class DriversController : ControllerBase
         if (driver == null)
         return BadRequest();
         if (driver.Nombre == string.Empty)
-        ModelState.AddModelError("Name", "El driver no debe estar vacio");
+        ModelState.AddModelError("Nombre", "El driver no debe estar vacio");
         driver.Id = Id;
 
         await _driverServices.UpdateDriver(driver);
